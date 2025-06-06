@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrigino | Organic Energy Bars</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #602e18;
+            --secondary: #d4a373;
+            --light: #fefae0;
+            --dark: #333;
+            --accent: #a68a64;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/Xxr4hzQs/f2b-OTr-JQOy9-FRqg-At-Sqw-1.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .product-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .product-desc {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #c08d5a;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-btn {
+                border-radius: 30px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <img src="https://i.ibb.co/xQ2t8bb/logo01.png" alt="Nutrigino Logo" class="logo">
+            <a href="#" class="btn">Coming Soon</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Fuel Your Day the Natural Way</h1>
+            <p>Nutrigino energy bars are crafted with organic Indian superfoods like almonds, cashews, figs, and Himalayan honey. No preservatives. No refined sugar. Just pure energy.</p>
+            <a href="#products" class="btn">Explore Flavors</a>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Organic Energy Bars</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <img src="https://i.ibb.co/Q3SP9G4N/001.webp" alt="Nutrigino Spiced Fig & Nut Bar" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">nutrigino</h3>
+                        <p class="product-subtitle">Spiced Fig & Nut Bar</p>
+                        <p class="product-desc">A delicious blend of organic figs, almonds, and warm Indian spices like cardamom. Rich in fiber and natural sweetness.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <img src="https://i.ibb.co/hR4Ch6mj/004.webp" alt="Nutrigino Almond & Cashew Crunch" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">nutrigino</h3>
+                        <p class="product-subtitle">Almond & Cashew Crunch</p>
+                        <p class="product-desc">Packed with protein-rich almonds and cashews, lightly sweetened with jaggery. A crunchy, satisfying snack.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <img src="https://i.ibb.co/nsdg7H7x/003.jpg" alt="Nutrigino Peanut Chocolate Delight" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">nutrigino</h3>
+                        <p class="product-subtitle">Peanut Chocolate Delight</p>
+                        <p class="product-desc">Organic peanuts meet dark chocolate and Himalayan honey for a decadent yet guilt-free energy boost.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <img src="https://i.ibb.co/1YHhFPR8/002.webp" alt="Nutrigino Seed Power Bar" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">nutrigino</h3>
+                        <p class="product-subtitle">Seed Power Bar</p>
+                        <p class="product-desc">A powerhouse of pumpkin seeds, flaxseeds, and nuts. Zero refined sugar, maximum energy.</p>
+                        <a href="#" class="btn">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Get Notified When We Launch</h2>
+            <p>Sign up for exclusive updates and a 15% discount on your first order.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="https://i.ibb.co/xQ2t8bb/logo01.png" alt="Nutrigino Logo" class="footer-logo">
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+            <p class="copyright">© 2023 Nutrigino. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
